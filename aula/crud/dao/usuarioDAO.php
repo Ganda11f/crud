@@ -43,7 +43,13 @@ class UsuarioDAO
                     idade = :idade,
                     sexo = :sexo
                     WHERE id = :id";
-            // restante do código...
+        $p_sql = Conexao::getConexao()->prepare($sql);
+        $p_sql -> bindValue (":nome",$usuario->getNome());
+        $p_sql -> bindValue (":sobrenome",$usuario->getSobrenome());
+        $p_sql -> bindValue (":sexo",$usuario->getSexo());
+        $p_sql -> bindValue (":id",$usuario->getId());
+
+    return $p_sql->execute();
         } catch (Exception $e) {
             print("Erro ao atualizar usuário <br>" . $e . "<br>");
         }
