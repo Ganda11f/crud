@@ -74,7 +74,7 @@ $usuariodao = new UsuarioDAO();
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($usuariodao->read() as $usuario); ?>
+                <?php foreach ($usuariodao->read() as $usuario): ?>
                 <tr>
                     <td><?= $usuario->getId() ?></td>
                     <td><?= $usuario->getNome() ?></td>
