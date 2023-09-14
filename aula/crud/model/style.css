@@ -2,3 +2,8 @@
     width: 30px;
     height: 50px;
 }
+.menu,
+thead{
+    background-color: #bbb !important;
+}
+.row{padding: 10px;}
